@@ -2,6 +2,11 @@
 #include <math.h>
 #include <stdlib.h>
 
+
+// NOTA: Si da error de "undefined reference to 'mathematical operation goes here'" compilar con -lm al final
+
+
+
 //EJERCICIO 6
 int minimo(int num1, int num2)
 {
@@ -16,15 +21,16 @@ int minimo(int num1, int num2)
         return num2;
     }
 }
-void minimo_referencia(int num1, int num2, int *max)
+void minimo_referencia(int num1, int num2, int *min)
 {
     if (num1 < num2)
     {
-        *max = num1;
+        
+        *min = num1;
     }
     else
     {
-        *max = num2;
+        *min = num2;
     }
 }
 
