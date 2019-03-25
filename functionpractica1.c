@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include "functionpractica1.h"
 
 // NOTA: Si da error de "undefined reference to 'mathematical operation goes here'" compilar con -lm al final
 
@@ -126,4 +127,24 @@ void estadisticaCadena(char string[256], int *spc, int *nr, int *upper, int *low
         }
     }
     return;
+}
+//FIN EJERCICIO 8
+
+
+//EJERCICIO 9
+
+struct monomio leeMonomio(){
+    
+    struct monomio m;
+    printf("Introduzca un coeficiente: \n");
+    scanf("%d", &m.coeficiente);
+    printf("Introduzca un grado: \n");
+    scanf("%d", &m.grado);
+    
+    return m;
+}
+
+void imprimeMonomio(struct monomio m){
+
+    printf("%dX^%d", m.coeficiente, m.grado);
 }
