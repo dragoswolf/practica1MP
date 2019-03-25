@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-
+#include <string.h>
+#include <ctype.h>
 
 // NOTA: Si da error de "undefined reference to 'mathematical operation goes here'" compilar con -lm al final
 
@@ -33,13 +34,13 @@ void minimo_referencia(int num1, int num2, int *min)
         *min = num2;
     }
 }
+//FIN EJERCICIO 6
 
 //EJERCICIO 7
 void estadisticasVector(int i, int size, int *v)
 {
     printf("Introduzca números enteros. Si quiere dejar de introducir, introduzca '-1'\n");
     int k=0; //array runner
-    int aux=0; //aux variable for mathematical operations
     int sum=0; //sum variable for array sum
     float media=0; //average variable for average function
     float var=0; //variance variable for variance function
@@ -95,9 +96,34 @@ void estadisticasVector(int i, int size, int *v)
     printf("La desviación típica es: %f\n", dev);
 
     //FIN DESVIACIÓN TÍPICA
-
-
-
-
 }
+//FIN EJERCICIO 7
 
+//EJERCICIO 8
+
+void estadisticaCadena(char string[256], int *spc, int *nr, int *upper, int *lower){
+    
+    char c;
+
+    for (int i=0; i<strlen(string)-1; i++){
+        
+        c=string[i];
+
+        if(isspace(c)!=0){
+            *spc=*spc+1;
+        }
+        
+        if(isdigit(c)!=0){
+            *nr=*nr+1;
+        }
+
+        if(isupper(c)!=0){
+            *upper=*upper+1;
+        }
+
+        if(islower(c)!=0){
+            *lower=*lower+1;
+        }
+    }
+    return;
+}

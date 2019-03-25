@@ -8,4 +8,6 @@ void minimo_referencia(int num1, int num2, int *max);
 
 void estadisticasVector(int i, int size, int *v);
 
+void estadisticaCadena(char string[256], int *spc, int *nr, int *upper, int *lower);
+
 #endif //FUNCTIONPRACTICA1_H_
