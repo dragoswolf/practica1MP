@@ -148,3 +148,57 @@ void imprimeMonomio(struct monomio m){
 
     printf("%dX^%d", m.coeficiente, m.grado);
 }
+
+struct monomio *leePolinomio(int nMon){
+
+    struct monomio *P;
+
+    P=(struct monomio*)calloc(nMon, sizeof(struct monomio));
+    if(P==NULL){
+        printf("Error en la asignación de memoria...\n");
+        exit(-1);
+    }
+    else{
+        for(int i=0; i<nMon; i++){
+            P[i]=leeMonomio();
+        }
+    }
+    printf("Monomios asignados con éxito.\n");
+    return P;
+}
+
+void imprimePolinomio(int nMon, struct monomio *P){
+    printf("X=");
+    for(int i=0; i<nMon; i++){
+        imprimeMonomio(P[i]);
+        printf(" + ");
+    }
+}
+
+void minMax(struct monomio *P, int nMon, struct monomio *min, struct monomio *max){
+
+    *min=P[0];
+    *max=P[0];
+
+    for(int i=0; i<nMon; i++){
+        if(P[i].grado<(*min).grado){
+            *min=P[i];
+        }
+        
+        if(P[i].grado>(*max).grado){
+            *max=P[i];
+        }
+    }
+}
+
+void result(struct monomio *P, int nMon, int *res, int x){
+
+    int suma=0;
+    
+    for (int i=0; i<nMon; i++){
+        suma=suma+pow(((P[i].coeficiente)*x),P[i].grado);
+    }
+    *res=suma;
+}
+
+//FIN EJERCICIO 9
