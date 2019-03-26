@@ -10,5 +10,7 @@ int main()
 
     estadisticasVector(i, size, &v);
 
+    free(v);
+
     return 0;
 }

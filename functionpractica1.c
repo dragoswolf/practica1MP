@@ -99,7 +99,7 @@ void estadisticasVector(int i, int size, int *v)
 
     //FIN DESVIACIÓN TÍPICA
 
-    free(v);
+
 }
 //FIN EJERCICIO 7
 
@@ -204,7 +204,7 @@ void result(struct monomio *P, int nMon, int *res, int x){
     *res=suma;
 }
 
-free(P);
+
 
 //FIN EJERCICIO 9
 

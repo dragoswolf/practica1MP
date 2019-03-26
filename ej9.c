@@ -60,5 +60,7 @@ int main(int argc, char const *argv[])
 
     //FIN RESOLUCIÓN DEL POLINOMIO EN UN PUNTO X
 
+    free(P);
+
     return 0;
 }
