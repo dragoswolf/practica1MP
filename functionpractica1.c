@@ -204,6 +204,8 @@ void result(struct monomio *P, int nMon, int *res, int x){
     *res=suma;
 }
 
+free(P);
+
 //FIN EJERCICIO 9
 
 //EJERCICIO 10
