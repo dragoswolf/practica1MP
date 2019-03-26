@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdbool.h>
 #include "functionpractica1.h"
 
 // NOTA: Si da error de "undefined reference to 'mathematical operation goes here'" compilar con -lm al final
@@ -97,6 +98,8 @@ void estadisticasVector(int i, int size, int *v)
     printf("La desviación típica es: %f\n", dev);
 
     //FIN DESVIACIÓN TÍPICA
+
+    free(v);
 }
 //FIN EJERCICIO 7
 
@@ -202,3 +205,61 @@ void result(struct monomio *P, int nMon, int *res, int x){
 }
 
 //FIN EJERCICIO 9
+
+//EJERCICIO 10
+
+void createString(char string[256]){
+
+printf("Introduzca una cadena: \n");
+
+fgets(string, 256, stdin);
+
+printf("La cadena introducida es:\n %s\n", string);
+}
+
+bool esPrefijo(char *string, char pref[256]){
+
+    int j=0; //string runner
+
+    printf("Introduzca una cadena para determinar si es prefijo de la original o no: \n");
+    fgets(pref, 256, stdin);
+    printf("La cadena introducida es: %s\n", pref);
+
+    for (int i=0; i<strlen(pref)-1; i++){
+
+        if(string[i]==pref[i]){
+
+            return true;
+        }
+
+        else{
+
+            return false;
+        }
+    }
+}
+
+bool esSufijo(char *string, char suf[256]){
+
+    int j=0; //string runner
+
+    printf("Introduzca una cadena para determinar si es sufijo de la original o no: \n");
+    fgets(suf, 256, stdin);
+    printf("La cadena introducida es: %s\n", suf);
+
+    for(int i=0; i<strlen(string)-strlen(suf); i++){
+        
+        if(string[i]==suf[j]){
+
+            return false;
+        }
+        else{
+            
+            return true;
+        }
+
+        j++;
+    }
+}
+
+//FIN EJERCICIO 10
